@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #202020;
+}
+
+canvas {
+  display: block;
+  height: 600px;
+  width: 800px;
+}
+
+#canvasBG {
+  background: #FFF;
+}
+
+#canvasEntities {
+  margin: -600px 0 0;
+}
