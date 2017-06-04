@@ -53,7 +53,7 @@ function clearCtx(ctx) {
 }
 
 function randomRange(min, max) {
-  return Math.floor(Math.random() + (max + 1 - min)) + min;
+  return Math.floor(Math.random() * (max + 1 - min)) + min;
 }
 
 function Player() {
@@ -142,7 +142,7 @@ Player.prototype.checkObstacleCollide = function(newDrawX, newDrawY) {
     return false;
   } else {
     return true;
-  } 
+  }
 }
 
 function Obstacle(x, y, w, h) {
@@ -179,24 +179,24 @@ function defineObstacles() {
 
 function checkKey(e, value) {
   var keyID = e.keyCode || e.which;
-  
-  if (keyID == 38) { // up arrow 
+
+  if (keyID == 38) { // up arrow
     player1.isUpKey = value;
     e.preventDefault();
   }
-  if (keyID == 39) { // right arrow 
+  if (keyID == 39) { // right arrow
     player1.isRightKey = value;
     e.preventDefault();
   }
-  if (keyID == 40) { // down arrow 
+  if (keyID == 40) { // down arrow
     player1.isDownKey = value;
     e.preventDefault();
   }
-  if (keyID == 37) { // left arrow 
+  if (keyID == 37) { // left arrow
     player1.isLeftKey = value;
     e.preventDefault();
   }
-  if (keyID == 32) { // spacebar 
+  if (keyID == 32) { // spacebar
     player1.isSpacebar = value;
     e.preventDefault();
   }
@@ -223,7 +223,7 @@ function Enemy() {
   this.drawX = randomRange(0, canvasWidth - this.width);
   this.drawY = randomRange(0, canvasHeight - this.height);
   this.centerX = this.drawX + (this.width/2);
-  this.centerY = this.drawY + (this.height/2); 
+  this.centerY = this.drawY + (this.height/2);
   //this.targetX = this.centerX;
   //this.targetY = this.centerY;
   //this.randomMoveTime = randomRange(4000, 10000);
@@ -237,7 +237,7 @@ function Enemy() {
 Enemy.prototype.update = function() {
   //this.checkDirection();
   this.centerX = this.drawX + (this.width/2);
-  this.centerY = this.drawY + (this.height/2); 
+  this.centerY = this.drawY + (this.height/2);
 }
 
 Enemy.prototype.draw = function() {
